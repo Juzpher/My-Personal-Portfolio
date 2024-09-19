@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary-default text-secondary-default;
+  }
+}
+
+@layer components {
+  /* Fonts Styling*/
+  .hover-gradient {
+    @apply hover:text-secondary-default hover:bg-primary-100/50 transition-all duration-300;
+  }
+  .gradient-text {
+    @apply text-gradient [--tw-gradient-text:theme('colors.accent.default')];
+  }
+
+  /* Button Styling */
+  .default-button {
+    @apply py-2 m-1.5 min-w-[5.5rem] px-2 rounded-12 text-sm font-default;
+  }
+  .button-highlight {
+    @apply bg-secondary-default text-primary-default py-2 m-1.5 min-w-[5.5rem] px-2 rounded-12 text-sm font-default;
+  }
+  .button-highlight-hover {
+    @apply hover:bg-gradient [--tw-gradient-bg:theme('colors.accent.default')] [--tw-gradient-text:theme('colors.accent.default')] hover:text-secondary-default transition-all duration-300;
+  }
+  .button-outline {
+    @apply bg-transparent border border-secondary-50 hover:bg-primary-100 transition-all duration-200 ease-in-out text-secondary-default uppercase m-1.5 min-w-[5.5rem] py-3 px-4 rounded-12 text-sm font-default;
+  }
+  .button-outline-icon {
+    @apply bg-primary-default border border-secondary-50 hover:bg-primary-100 transition-all duration-200 ease-in-out text-secondary-default uppercase m-1.5 min-w-[2.5rem]  py-3 px-4 rounded-8 text-sm font-default;
+  }
+
+  .button-gradient {
+    @apply bg-gradient [--tw-gradient-bg:theme('colors.accent.default')] py-2 m-1.5 min-w-[5.5rem] px-2 rounded-12 text-sm font-default font-semibold;
+  }
+  /* Container */
+  /* Default Container */
+  .default-container {
+    @apply w-full min-h-screen flex items-center;
+  }
+}
+
+@layer utilities {
+  .small-caps {
+    font-variant: small-caps;
+  }
+}
