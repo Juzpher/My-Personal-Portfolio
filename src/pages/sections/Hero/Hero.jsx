@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import displayImg from "../../../assets/Img/profile.png";
 import heroImg from "../../../assets/Img/Hero-Img.png";
 import cvPdf from "../../../assets/document/pdf/Juspher R. Vergara.pdf";
@@ -7,27 +8,69 @@ import cvPdf from "../../../assets/document/pdf/Juspher R. Vergara.pdf";
 import { IoMdCloudDownload } from "react-icons/io";
 
 const Hero = () => {
+  const ref = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.7, 1],
+    [1, 1, 0.5, 0]
+  );
+  const y = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0, 50, 100]);
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+      },
+    },
+  };
+
   return (
-    <div className="default-container flex items-center" name="home">
+    <motion.div
+      ref={ref}
+      className="default-container flex items-center"
+      name="home"
+      style={{ opacity, y }}
+    >
       <div className="w-full flex flex-col lg:flex-row items-center justify-between">
         {/* Text */}
-        <div className="flex flex-col justify-center items-center lg:items-start">
+        <motion.div
+          className="flex flex-col justify-center items-center lg:items-start"
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {/* First Section */}
-          <div className="flex items-center gap-2 mb-4">
+          <motion.div
+            className="flex items-center gap-2 mb-4"
+            variants={itemVariants}
+          >
             <img
               src={displayImg}
               alt="hero"
               className="w-auto h-14 rounded-md"
             />
-            <div className="flex items-center gap-2">
-              <div className="rounded-full w-3 h-3 bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+            <div className="flex items-center gap-2 z-50">
+              <div className="rounded-full w-3 h-3 bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse-glow" />
               <p className="text-sm text-secondary-50 lowercase">
                 Available to work
               </p>
             </div>
-          </div>
+          </motion.div>
           {/* Second Section */}
-          <div className="flex flex-col text-center lg:text-left">
+          <motion.div
+            className="flex flex-col text-center lg:text-left"
+            variants={itemVariants}
+          >
             <h1 className="font-bold text-5xl font-work tracking-tight">
               Hi, I'm{" "}
               <span className="text-gradient [--tw-gradient-text:theme('colors.accent.default')]">
@@ -42,31 +85,41 @@ const Hero = () => {
               </span>
             </h1>
             <p className="mt-2 text-xl text-secondary-50 ">
-              Full-Stack Developer | Web Designer
+              Front-end Developer | Web Designer
             </p>
             {/* Download CV Button */}
-            <div className="mt-5 flex items-center justify-center lg:justify-start">
-              <a
+            <motion.div
+              className="mt-5 flex items-center justify-center lg:justify-start"
+              variants={itemVariants}
+            >
+              <motion.a
                 href={cvPdf}
                 download="Juspher Vergara CV.pdf"
                 className="button-outline flex justify-items-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <IoMdCloudDownload className="mr-2 h-5 w-5" />
                 Download CV
-              </a>
-            </div>
-          </div>
-        </div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </motion.div>
         {/* Image */}
-        <div className=" justify-center items-center hidden lg:flex">
+        <motion.div
+          className="justify-center items-center hidden lg:flex"
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <img
             src={heroImg}
             alt="hero"
             className="max-h-[40rem] w-auto rounded-md"
           />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

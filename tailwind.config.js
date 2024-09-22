@@ -38,6 +38,15 @@ export default {
         default: ["Poppins", "sans-serif"],
         work: ["Work Sans", "sans-serif"],
       },
+      keyframes: {
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 8px rgba(34, 197, 94, 0.6)" },
+          "50%": { boxShadow: "0 0 16px rgba(34, 197, 94, 0.8)" },
+        },
+      },
+      animation: {
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+      },
     },
   },
   plugins: [
