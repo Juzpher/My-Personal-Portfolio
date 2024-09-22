@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const Card = ({ img, type, name, role, tools, id }) => {
   return (
     <motion.div
-      className="bg-gradient-to-br from-primary-50 to-primary-100 p-4 rounded-lg shadow-lg w-full h-full relative overflow-hidden"
+      className="bg-gradient-to-br from-primary-100 to-primary-50 p-4 rounded-lg shadow-lg w-full h-full relative overflow-hidden cursor-default"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

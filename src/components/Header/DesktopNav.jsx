@@ -6,13 +6,55 @@ import { GrContactInfo } from "react-icons/gr";
 const DesktopNav = ({ Logo, menuItems }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
 
-  return (
-    <div className="flex items-center justify-between">
-      <div>
-        <img src={Logo} alt="" className="w-10 h-10" />
-      </div>
+  const containerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
 
-      <nav className="bg-primary-50/30 backdrop-blur-md rounded-18">
+  const itemVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
+  return (
+    <motion.div
+      className="flex items-center justify-between"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div variants={itemVariants}>
+        <motion.img
+          src={Logo}
+          alt=""
+          className="w-10 h-10"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        />
+      </motion.div>
+
+      <motion.nav
+        className="bg-primary-50/30 backdrop-blur-md rounded-18"
+        variants={itemVariants}
+      >
         <ul className="flex items-center justify-evenly">
           {menuItems.map((item) => (
             <motion.li
@@ -27,7 +69,7 @@ const DesktopNav = ({ Logo, menuItems }) => {
                 to={item.toLowerCase()}
                 spy={true}
                 smooth={true}
-                duration={500}
+                duration={1000}
                 className="block w-full h-full "
               >
                 {item}
@@ -47,21 +89,23 @@ const DesktopNav = ({ Logo, menuItems }) => {
             </motion.li>
           ))}
         </ul>
-      </nav>
+      </motion.nav>
 
-      <div>
-        <Link
-          to="contact"
-          spy={true}
-          smooth={true}
-          duration={500}
-          className="lg:button-outline button-outline-icon capitalize lg:px-4 cursor-pointer"
-        >
-          <p className="md:hidden lg:flex">Contact Me</p>
-          <GrContactInfo className="flex lg:hidden" />
-        </Link>
-      </div>
-    </div>
+      <motion.div variants={itemVariants}>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            className="lg:button-outline button-outline-icon capitalize lg:px-4 cursor-pointer"
+          >
+            <p className="md:hidden lg:flex">Contact Me</p>
+            <GrContactInfo className="flex lg:hidden" />
+          </Link>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
