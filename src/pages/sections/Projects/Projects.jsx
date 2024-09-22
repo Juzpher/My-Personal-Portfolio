@@ -4,9 +4,9 @@ import projectsData from "../../../assets/mock/projects/_projects";
 
 const Projects = () => {
   return (
-    <div className="default-container flex flex-col gap-12">
-      <div className="flex flex-col gap-4">
-        <h1 className="text-2xl small-caps font-semibold gradient-text tracking-wider">
+    <div className="default-container flex flex-col gap-12" name="projects">
+      <div className="w-full">
+        <h1 className="text-2xl small-caps font-semibold gradient-text tracking-wider text-left w-full">
           My Projects
         </h1>
       </div>

@@ -1,47 +1,58 @@
 import React from "react";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
+import { NavLink } from "react-router-dom";
 
-const Card = ({ id, type, name, role, img, tools }) => {
+const Card = ({ img, type, name, role, tools, id }) => {
   return (
-    <div className="bg-primary-50 p-4 rounded-16 w-full h-full">
-      <div className="flex flex-col gap-4 h-full">
+    <motion.div
+      className="bg-gradient-to-br from-primary-50 to-primary-100 p-4 rounded-lg shadow-lg w-full h-full relative overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{
+        y: -5,
+        boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
+        transition: { duration: 0.3 },
+      }}
+    >
+      <motion.div className="flex flex-col gap-4 h-full">
         {/* Img div */}
-        <div className="flex-shrink-0">
-          <img
-            src={img}
-            alt=""
-            className="rounded-8 w-full h-80 object-cover"
-          />
+        <div className="flex-shrink-0 overflow-hidden rounded-lg">
+          <img src={img} alt={name} className="w-full h-80 object-cover" />
         </div>
         {/* Text div */}
-        <div className="flex flex-col gap-2 flex-grow">
+        <div className="flex justify-between items-center">
           <div>
-            <h1 className="small-caps font-work tracking-wider text-xl text-secondary-default">
+            <motion.h1
+              className="text-xl font-semibold text-secondary-default mb-1"
+              whileHover={{ x: 5 }}
+              transition={{ duration: 0.2 }}
+            >
               {type}
-            </h1>
-            <p className="text-secondary-50">
-              <span>{name}</span> | <span>{role}</span>
-            </p>
+            </motion.h1>
+            <motion.p
+              className="text-secondary-50 text-sm"
+              whileHover={{ x: 5 }}
+              transition={{ duration: 0.2 }}
+            >
+              {name} | {role}
+            </motion.p>
           </div>
-          <div className="flex justify-between items-start mt-auto">
-            {/* Bread crumbs */}
-            <div className="flex flex-wrap gap-2 max-w-[calc(100%-3rem)]">
-              {tools.map((tool, index) => (
-                <span
-                  key={index}
-                  className="py-1 px-2 rounded-8 bg-primary-75 text-secondary-50 text-sm"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-            <button className="button-outline-icon flex-shrink-0 ml-2">
-              <FaExternalLinkAlt />
-            </button>
-          </div>
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 45 }}
+            transition={{ duration: 0.2 }}
+          >
+            <NavLink
+              to={`/project/${id}`}
+              className="button-outline-icon bg-secondary-default text-primary-50 hover:bg-primary-50 hover:text-secondary-default p-2 border-none rounded-full"
+            >
+              <FiArrowUpRight className="h-6 w-6" />
+            </NavLink>
+          </motion.div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

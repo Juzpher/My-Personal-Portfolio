@@ -1,16 +1,19 @@
 import React from "react";
 import previewLaptop from "../../../assets/Img/Preview/companyLaptop.png";
 import companyLogo from "../../../assets/Img/Preview/companyLogo.png";
-import { FaLink } from "react-icons/fa6";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Experience = () => {
   return (
-    <div className="default-container flex flex-col gap-12 items-center justify-center">
+    <div
+      className="default-container flex flex-col gap-12 items-center justify-center"
+      name="experience"
+    >
       <div className="flex flex-col gap-4 text-left">
         <h1 className="text-2xl small-caps font-semibold gradient-text tracking-wider">
           My work experience
         </h1>
-        <p className="tracking-wider ">
+        <p className="tracking-wider font-extralight">
           As an aspiring web developer, I am committed to gaining valuable
           experience in environments that enhance my skills and expertise.
           Here’s a look at my experience:
@@ -31,7 +34,7 @@ const Experience = () => {
               <p className="tracking-widest text-secondary-50">
                 June 2023 - July 2023
               </p>
-              <p className="tracking-widest text-secondary-primary font-default text-sm font-light py-2">
+              <p className="tracking-widest text-secondary-primary font-default text-sm font-extralight py-2">
                 At AP Global, I developed and maintained web applications,
                 collaborated with senior developers, and participated in
                 debugging and testing. I also contributed to redesigning and
@@ -40,11 +43,16 @@ const Experience = () => {
                 Minimal UI.
               </p>
             </div>
-            <div className="mt-auto ">
-              <button className="mx-0 button-outline flex items-center justify-center bg-primary-default normal-case">
-                <FaLink className="mr-2 h-5 w-5" />
-                <span>Visit Ap Global</span>
-              </button>
+            <div className="mt-auto flex justify-start">
+              <a
+                className="mx-0 button-outline flex items-center justify-center bg-primary-default normal-case"
+                href="https://www.apgitsolutions.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiArrowUpRight className="mr-2 h-5 w-5" />
+                <span>Visit AP Global</span>
+              </a>
             </div>
           </div>
         </div>
