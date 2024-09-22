@@ -9,7 +9,7 @@ const Description = () => {
           <h1 className=" font-default tracking-wider font-bold text-lg uppercase">
             About Me
           </h1>
-          <p className="text-secondary-default text-sm font-default font-light tracking-widest">
+          <p className="text-secondary-default text-sm font-default font-extralight tracking-widest">
             {aboutData.paragraph}
           </p>
         </div>
@@ -20,13 +20,13 @@ const Description = () => {
                 <h1 className="text-secondary-default text-3xl font-default font-bold tracking-wider">
                   {item.number}
                 </h1>
-                <p className="text-secondary-50 text-sm font-default tracking-wider">
+                <p className="text-secondary-50 text-sm font-default tracking-wider ">
                   {item.text}
                 </p>
               </div>
             ))}
           </div>
-          <div className="flex justify-center items-center ">
+          <div className="flex justify-center items-center  ">
             <img src={aboutData.logo} alt="logo" className="w-10 h-10" />
           </div>
         </div>

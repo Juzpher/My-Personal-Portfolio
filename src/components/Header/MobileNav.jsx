@@ -1,46 +1,100 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { HiBars3BottomRight } from "react-icons/hi2";
-import { RiCloseCircleLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { IoClose } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
 
-const MobileNav = ({ Logo, onOpen, onClose, menuItems, hideRight }) => {
+import { Link } from "react-scroll";
+
+const MobileNav = ({ Logo, menuItems }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const allMenuItems = [...menuItems, "Contact"];
+
   return (
-    <nav className="h-16 flex justify-between items-center px-6 lg:px-12 text-secondary-default">
-      <Link to="/" className="w-10 h-10">
+    <nav className="h-16 flex justify-between items-center px-6 lg:px-12 text-secondary-default relative">
+      <Link
+        to="home"
+        spy={true}
+        smooth={true}
+        duration={500}
+        className="w-10 h-10 cursor-pointer"
+      >
         <img src={Logo} alt="logo" className="w-full h-full object-contain" />
       </Link>
-      <button onClick={onOpen} className="text-secondary">
-        <HiBars3BottomRight className="w-7 h-7" />
-      </button>
-      <div
-        className={`transition-all duration-500 ease-in-out w-[80%] h-full fixed bg-primary-100 z-50 top-0 ${hideRight} flex items-center justify-center`}
-      >
+      <div className="relative" ref={dropdownRef}>
         <button
-          onClick={onClose}
-          className="absolute top-5 right-6 text-secondary"
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-secondary focus:outline-none"
         >
-          <RiCloseCircleLine className="w-7 h-7" />
+          <AnimatePresence initial={false} mode="wait">
+            {isOpen ? (
+              <motion.div
+                key="close"
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <IoClose className="w-7 h-7" />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="menu"
+                initial={{ opacity: 0, rotate: 90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: -90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <HiBars3BottomRight className="w-7 h-7" />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </button>
-
-        <div className="flex flex-col items-center gap-8 p-6">
-          <a href="/" className="mb-8">
-            <img src={Logo} alt="logo" className="h-16 w-auto" />
-          </a>
-
-          <ul className="flex flex-col items-center gap-5">
-            {menuItems?.map((menu, index) => (
-              <li key={index}>
-                <Link
-                  to={menu}
-                  className=" capitalize text-secondary-default text-xl"
-                  onClick={onClose}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="absolute right-0 mt-2 w-48 bg-primary-100 border border-primary-50 rounded-md p-2 shadow-lg z-10"
+            >
+              {allMenuItems.map((menu, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  {menu}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+                  <Link
+                    to={menu.toLowerCase()}
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    className="block px-4 py-2 rounded-md text-sm text-secondary-default hover:bg-primary-50  transition-all duration-300 ease-in-out cursor-pointer"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {menu}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

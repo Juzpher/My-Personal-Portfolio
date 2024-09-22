@@ -9,7 +9,7 @@ const Tools = () => {
         <h1 className="text-2xl small-caps font-semibold gradient-text tracking-wider">
           Technologies I use
         </h1>
-        <p className="tracking-wider">
+        <p className="tracking-wider font-extralight">
           As a web developer, I create responsive and engaging websites using a
           variety of technologies. Below, you'll find the tools and frameworks
           that power my work
@@ -18,7 +18,7 @@ const Tools = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {toolsData.map((tool) => (
           <Capsule
-            key={tool.id}
+            key={tool.id || tool.name} // Use tool.id if available, otherwise use tool.name
             name={tool.name}
             description={tool.description}
             icon={tool.icon}
