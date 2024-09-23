@@ -68,6 +68,7 @@ const DesktopNav = ({ Logo, menuItems }) => {
               <Link
                 to={item.toLowerCase()}
                 spy={true}
+                offset={-30}
                 smooth={true}
                 duration={1000}
                 className="block w-full h-full "
@@ -97,6 +98,7 @@ const DesktopNav = ({ Logo, menuItems }) => {
             to="contact"
             spy={true}
             smooth={true}
+            offset={-12}
             duration={1000}
             className="lg:button-outline button-outline-icon capitalize lg:px-4 cursor-pointer"
           >
