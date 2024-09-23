@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Status from "../Status/Status";
+import { FaCheckCircle } from "react-icons/fa";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const Form = () => {
   const [formStatus, setFormStatus] = useState(null);
@@ -43,6 +46,15 @@ const Form = () => {
       setErrorMessage(`Network error: ${error.message}`);
     }
   };
+
+  useEffect(() => {
+    if (formStatus === "success" || formStatus === "error") {
+      const timer = setTimeout(() => {
+        setFormStatus(null); // Reset status after 3 seconds
+      }, 3000);
+      return () => clearTimeout(timer); // Cleanup on unmount
+    }
+  }, [formStatus]);
 
   return (
     <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
@@ -107,12 +119,22 @@ const Form = () => {
       </div>
 
       {formStatus === "success" && (
-        <p className="mt-4 text-green-600">Message sent successfully!</p>
+        <div className="absolute my-2 justify-start">
+          <Status
+            message={"Message sent successfully!"}
+            icon={<FaCheckCircle />}
+            background={"bg-green-700"}
+          />
+        </div>
       )}
       {formStatus === "error" && (
-        <p className="mt-4 text-red-600">
-          An error occurred. Please try again.
-        </p>
+        <div className="absolute my-2 justify-start">
+          <Status
+            message={"An error occurred. Please try again."}
+            icon={<IoMdCloseCircle />}
+            background={"bg-red-700"}
+          />
+        </div>
       )}
     </form>
   );

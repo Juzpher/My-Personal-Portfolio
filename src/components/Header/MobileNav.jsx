@@ -83,6 +83,7 @@ const MobileNav = ({ Logo, menuItems }) => {
                   <Link
                     to={menu.toLowerCase()}
                     spy={true}
+                    offset={-20}
                     smooth={true}
                     duration={500}
                     className="block px-4 py-2 rounded-md text-sm text-secondary-default hover:bg-primary-50  transition-all duration-300 ease-in-out cursor-pointer"
