@@ -111,7 +111,7 @@ const Form = () => {
       <div>
         <button
           type="submit"
-          className=" button-gradient flex items-center justify-center rounded-8"
+          className=" button-outline w-full flex items-center justify-center rounded-8"
           disabled={formStatus === "submitting"}
         >
           {formStatus === "submitting" ? "SENDING..." : "SEND"}
