@@ -2,6 +2,8 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import displayImg from "../../../assets/Img/profile.png";
 import heroImg from "../../../assets/Img/Hero-Img.png";
+import subject from "../../../assets/Img/subject.png";
+import background from "../../../assets/Img/background.png";
 import cvPdf from "../../../assets/document/pdf/Juspher R. Vergara.pdf";
 
 //Icons
@@ -71,7 +73,7 @@ const Hero = () => {
             className="flex flex-col text-center lg:text-left"
             variants={itemVariants}
           >
-            <h1 className="font-bold text-5xl font-work tracking-tight">
+            <h1 className="font-bold text-4xl md:text-5xl font-work tracking-tight">
               Hi, I'm{" "}
               <span className="text-gradient [--tw-gradient-text:theme('colors.accent.default')]">
                 Juspher
@@ -112,11 +114,22 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <img
-            src={heroImg}
-            alt="hero"
-            className="max-h-[40rem] w-auto rounded-md"
-          />
+          <div className="relative">
+            <motion.img
+              src={background}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+              animate={{ y: [0, 10, 0], x: [0, 5, 0] }} // Floating and horizontal animation
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.img
+              src={subject}
+              alt="hero"
+              className="max-h-[40rem] w-auto rounded-md relative z-10" // Ensure subject is in front
+              animate={{ y: [0, -10, 0], x: [0, -5, 0] }} // Floating and horizontal animation
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
         </motion.div>
       </div>
     </motion.div>

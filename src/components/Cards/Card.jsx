@@ -19,7 +19,13 @@ const Card = ({ img, type, name, role, tools, id }) => {
       <motion.div className="flex flex-col gap-4 h-full">
         {/* Img div */}
         <div className="flex-shrink-0 overflow-hidden rounded-lg">
-          <img src={img} alt={name} className="w-full h-80 object-cover" />
+          <motion.img // Changed to motion.img
+            src={img}
+            alt={name}
+            className="w-full h-80 object-cover"
+            whileHover={{ scale: 1.1 }} // Added zoom-out effect
+            transition={{ duration: 0.3 }} // Transition duration for the effect
+          />
         </div>
         {/* Text div */}
         <div className="flex justify-between items-center">

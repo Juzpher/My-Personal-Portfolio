@@ -66,7 +66,7 @@ const Experience = () => {
           className="text-2xl small-caps font-semibold gradient-text tracking-wider"
           variants={itemVariants}
         >
-          My work experience
+          My experience
         </motion.h1>
         <motion.p
           className="tracking-wider font-extralight"
