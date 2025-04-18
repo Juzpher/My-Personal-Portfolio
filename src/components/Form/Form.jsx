@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Status from "../Status/Status";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoMdCloseCircle } from "react-icons/io";
-
 const Form = () => {
   const [formStatus, setFormStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
