@@ -2,7 +2,6 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaGithub, FaFacebook, FaLinkedin } from "react-icons/fa";
 import Form from "../../../components/Form/Form";
-
 const Contact = () => {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -74,7 +73,7 @@ const Contact = () => {
           >
             <motion.a
               className="button-outline-icon"
-              href="https://github.com/EijiroNotME"
+              href="https://github.com/Juzpher"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
