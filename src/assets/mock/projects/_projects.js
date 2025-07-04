@@ -4,6 +4,7 @@ import portfolio from "../../Img/Preview/portfolio.png";
 import taskflow from "../../Img/Preview/taskflow.png";
 import tastehub from "../../Img/Preview/tastehub.png";
 import julie from "../../Img/Preview/julie.png";
+import finora from "../../Img/Preview/Finora.png";
 
 //Icons
 import html from "../../Img/Icons/html.png";
@@ -19,6 +20,9 @@ import php from "../../Img/Icons/php.png";
 import flowbite from "../../Img/Icons/flowbite.png";
 import express from "../../Img/Icons/express.png";
 import node from "../../Img/Icons/node.png";
+import nextjs from "../../Img/Icons/Next.js.png";
+import tanstack from "../../Img/Icons/react-query-icon_.png";
+import shadcn from "../../Img/Icons/shadcn-ui.png";
 
 const projectsData = [
   {
@@ -35,20 +39,20 @@ const projectsData = [
     link: "https://smithee-coffee.netlify.app/",
     github: "/Not-available",
   },
-  {
-    id: "2024-02",
-    type: "Image Sharing Website",
-    name: "Photo G!",
-    role: "Full Stack",
-    img: photo,
-    tools: [html, css, js, bootstrap, php, sql],
-    description:
-      "Photo G! is an image sharing website that allows users to upload, view, and share images. It is built with React.js for the front-end, and Express and Node.js for the back-end, MongoDB is used for data storage.",
-    challenges:
-      "One challenge I faced was implementing authentication and handling API calls, but by using Postman to test and verify APIs, the development process became smoother. This project improved my skills in full-stack development, API integration, and user authentication.",
-    link: "http://photo-g.infinityfreeapp.com/",
-    github: "/Not-available",
-  },
+  // {
+  //   id: "2024-02",
+  //   type: "Image Sharing Website",
+  //   name: "Photo G!",
+  //   role: "Full Stack",
+  //   img: photo,
+  //   tools: [html, css, js, bootstrap, php, sql],
+  //   description:
+  //     "Photo G! is an image sharing website that allows users to upload, view, and share images. It is built with React.js for the front-end, and Express and Node.js for the back-end, MongoDB is used for data storage.",
+  //   challenges:
+  //     "One challenge I faced was implementing authentication and handling API calls, but by using Postman to test and verify APIs, the development process became smoother. This project improved my skills in full-stack development, API integration, and user authentication.",
+  //   link: "http://photo-g.infinityfreeapp.com/",
+  //   github: "/Not-available",
+  // },
   {
     id: "2024-03",
     type: "Cooking Book Website",
@@ -61,7 +65,7 @@ const projectsData = [
     challenges:
       "One challenge I encountered was the slow loading of images and their unappealing display during loading. To address this, I implemented skeleton screens and lazy loading, which optimized image loading and improved user experience. This project helped me refine my skills in performance optimization and front-end development.",
     link: "https://tastehub-01.netlify.app",
-    github: "https://github.com/EijiroNotME/My-TasteHub.git",
+    github: "https://github.com/Juzpher/My-TasteHub.git",
   },
   {
     id: "2024-04",
@@ -89,7 +93,7 @@ const projectsData = [
     challenges:
       "One challenge I faced was implementing authentication and handling API calls, but by using Postman to test and verify APIs, the development process became smoother. This project improved my skills in full-stack development, API integration, and user authentication.",
     link: "https://my-todo-app-frontend.onrender.com/",
-    github: "https://github.com/EijiroNotME/My-Todo-App.git",
+    github: "https://github.com/Juzpher/My-Todo-App.git",
   },
   {
     id: "2024-06",
@@ -102,7 +106,20 @@ const projectsData = [
       "This is my first personal portfolio, designed to showcase my skills as a front-end developer. Built using React.js with Vite for fast development and TailwindCSS for modern styling, this project was initially challenging due to a lack of design ideas. However, after gathering inspiration from design communities, I was able to complete the portfolio and present my work effectively. This project was a significant step in my journey as a developer, highlighting my abilities and growth in front-end design.",
     challenges: "",
     link: "https://juspher-vergara-portfolio.netlify.app",
-    github: "https://github.com/EijiroNotME/juspher-portfolio.git",
+    github: "https://github.com/Juzpher/juspher-portfolio.git",
+  },
+  {
+    id: "2024-07",
+    type: "Budget Tracker Website",
+    name: "Finora",
+    role: "Fullstack",
+    img: finora,
+    tools: [nextjs, shadcn, tanstack, mongo],
+    description:
+      "This is a budget tracker website that allows users to track their income and expenses. It is built with Next.js, Shadcn UI, and Tanstack Query.",
+    challenges: "",
+    link: "https://budget-tracker-54kh.onrender.com/",
+    github: "https://github.com/Juzpher/Budget-Tracker.git",
   },
 ];
 

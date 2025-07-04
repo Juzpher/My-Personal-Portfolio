@@ -62,7 +62,7 @@ const Hero = () => {
               className="w-auto h-14 rounded-md"
             />
             <div className="flex items-center gap-2">
-              <div className="rounded-full w-3 h-3 bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse-glow" />
+              <div className="rounded-full w-3 h-3 bg-green-500  shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse-glow" />
               <p className="text-sm text-secondary-50 lowercase">
                 Available to work
               </p>
