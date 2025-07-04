@@ -5,7 +5,7 @@ import logo from "../../assets/Img/Logo/Logo.png";
 
 const quickLinks = ["Home", "About", "Experience", "Contact"];
 const socialLinks = [
-  { name: "Github", url: "https://github.com/EijiroNotME" },
+  { name: "Github", url: "https://github.com/Juzpher" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/juspher-vergara/" },
   { name: "Facebook", url: "https://www.facebook.com/Juspher.VergaraRomano/" },
 ];
