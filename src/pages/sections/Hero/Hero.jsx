@@ -96,7 +96,8 @@ const Hero = () => {
             >
               <motion.a
                 href={cvPdf}
-                download="Juspher Vergara CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="button-outline flex justify-items-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

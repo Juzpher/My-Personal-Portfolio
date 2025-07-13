@@ -32,6 +32,7 @@ const projectsData = [
     role: "Front End",
     img: smithee,
     tools: [html, css, js, material],
+    toolsInText: ["HTML", "CSS", "JavaScript", "MaterializeCSS"],
     description:
       "Smithee Coffee is my first web development project, created to showcase coffee shop products. The main goal of this website was to enhance my skills in front-end development. ",
     challenges:
@@ -60,6 +61,7 @@ const projectsData = [
     role: "Front End",
     img: tastehub,
     tools: [react, tailwind],
+    toolsInText: ["React.js", "TailwindCSS"],
     description:
       "TasteHub is a recipe book website where users can search for a variety of recipes, including lunch, desserts, and drinks. Developed using React.js for dynamic rendering and TailwindCSS for responsive design, the website manages recipe data stored in JSON files.",
     challenges:
@@ -74,6 +76,7 @@ const projectsData = [
     role: "Front End",
     img: julie,
     tools: [react, tailwind, flowbite],
+    toolsInText: ["React.js", "TailwindCSS", "Flowbite"],
     description:
       "Julie Hansen Services is a real estate services website I was tasked with redesigning based on a reference website. Using React.js with Vite as the framework, along with TailwindCSS and the Flowbite UI library, I focused on creating a visually appealing and responsive site that effectively showcases properties and services.",
     challenges:
@@ -88,6 +91,7 @@ const projectsData = [
     role: "Full Stack | MERN",
     img: taskflow,
     tools: [react, tailwind, express, node, mongo],
+    toolsInText: ["React.js", "TailwindCSS", "Express", "Node.js", "MongoDB"],
     description:
       "The To-Do List Workflow is a task management app designed to help users organize and track their daily tasks. Built with Vite for development speed, React.js for the front-end, and Express and Node.js for the back-end, MongoDB is used for data storage.",
     challenges:
@@ -97,11 +101,12 @@ const projectsData = [
   },
   {
     id: "2024-06",
-    type: "Personal Portfolio Website",
-    name: "PHR.",
+    type: "Portfolio Website",
+    name: "Previous Portfolio",
     role: "Front End",
     img: portfolio,
     tools: [react, tailwind],
+    toolsInText: ["React.js", "TailwindCSS"],
     description:
       "This is my first personal portfolio, designed to showcase my skills as a front-end developer. Built using React.js with Vite for fast development and TailwindCSS for modern styling, this project was initially challenging due to a lack of design ideas. However, after gathering inspiration from design communities, I was able to complete the portfolio and present my work effectively. This project was a significant step in my journey as a developer, highlighting my abilities and growth in front-end design.",
     challenges: "",
@@ -115,6 +120,7 @@ const projectsData = [
     role: "Fullstack",
     img: finora,
     tools: [nextjs, shadcn, tanstack, mongo],
+    toolsInText: ["Next.js", "Shadcn UI", "Tanstack Query", "MongoDB"],
     description:
       "This is a budget tracker website that allows users to track their income and expenses. It is built with Next.js, Shadcn UI, and Tanstack Query.",
     challenges: "",

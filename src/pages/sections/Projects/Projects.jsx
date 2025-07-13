@@ -2,6 +2,7 @@ import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Card from "../../../components/Cards/Card";
 import projectsData from "../../../assets/mock/projects/_projects";
+import ProjectSection from "../../../components/ProjectSection/ProjectSection";
 
 const Projects = () => {
   const ref = React.useRef(null);
@@ -59,16 +60,17 @@ const Projects = () => {
         My Projects
       </motion.h1>
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="w-full"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {projectsData.map((project, index) => (
           <motion.div key={project.id} variants={itemVariants} custom={index}>
-            <Card {...project} />
+            <ProjectSection {...project} />
           </motion.div>
         ))}
+        <motion.div className="border-b w-full border-primary-75"></motion.div>
       </motion.div>
     </motion.div>
   );
