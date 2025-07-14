@@ -120,7 +120,13 @@ const projectsData = [
     role: "Fullstack",
     img: finora,
     tools: [nextjs, shadcn, tanstack, mongo],
-    toolsInText: ["Next.js", "Shadcn UI", "Tanstack Query", "MongoDB"],
+    toolsInText: [
+      "Next.js",
+      "Shadcn UI",
+      "Tanstack Query",
+      "MongoDB",
+      "Prisma",
+    ],
     description:
       "This is a budget tracker website that allows users to track their income and expenses. It is built with Next.js, Shadcn UI, and Tanstack Query.",
     challenges: "",

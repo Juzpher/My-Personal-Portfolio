@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import logo from "../../assets/Img/Logo/Logo.png";
 
-const quickLinks = ["Home", "About", "Experience", "Contact"];
+const quickLinks = ["Home", "About", "Experience", "Projects"];
 const socialLinks = [
   { name: "Github", url: "https://github.com/Juzpher" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/juspher-vergara/" },
