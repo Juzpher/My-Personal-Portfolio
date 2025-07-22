@@ -9,6 +9,7 @@ const seoMetadata = {
       "Developer, Web Developer, React.js, Node.js, JavaScript, TailwindCSS, MERN Stack, Portfolio, Frontend Developer, Backend Developer",
     author: "Juspher Vergara",
     canonical: "https://my-personal-portfolio-jr4y.onrender.com/",
+    googleSiteVerification: "gR_sYSxnXwp2c6dVB2TemvWpkrpbj5XCBNujEyJQBu4",
     openGraph: {
       type: "website",
       title: "Juspher Vergara - Web Developer Portfolio",
