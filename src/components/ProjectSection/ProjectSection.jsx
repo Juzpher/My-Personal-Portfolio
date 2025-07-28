@@ -39,6 +39,7 @@ const ProjectSection = ({ img, type, name, role, toolsInText, id, link }) => {
         <div className="flex-shrink-0">
           <NavLink
             to={link}
+            //to="/project/:id"
             target="_blank"
             className="flex items-center gap-1 sm:gap-2 font-bold italic group transition-all duration-200"
           >

@@ -40,20 +40,20 @@ const projectsData = [
     link: "https://smithee-coffee.netlify.app/",
     github: "/Not-available",
   },
-  // {
-  //   id: "2024-02",
-  //   type: "Image Sharing Website",
-  //   name: "Photo G!",
-  //   role: "Full Stack",
-  //   img: photo,
-  //   tools: [html, css, js, bootstrap, php, sql],
-  //   description:
-  //     "Photo G! is an image sharing website that allows users to upload, view, and share images. It is built with React.js for the front-end, and Express and Node.js for the back-end, MongoDB is used for data storage.",
-  //   challenges:
-  //     "One challenge I faced was implementing authentication and handling API calls, but by using Postman to test and verify APIs, the development process became smoother. This project improved my skills in full-stack development, API integration, and user authentication.",
-  //   link: "http://photo-g.infinityfreeapp.com/",
-  //   github: "/Not-available",
-  // },
+  {
+    id: "2024-06",
+    type: "Portfolio Website",
+    name: "Previous Portfolio",
+    role: "Front End",
+    img: portfolio,
+    tools: [react, tailwind],
+    toolsInText: ["React.js", "TailwindCSS"],
+    description:
+      "This is my first personal portfolio, designed to showcase my skills as a front-end developer. Built using React.js with Vite for fast development and TailwindCSS for modern styling, this project was initially challenging due to a lack of design ideas. However, after gathering inspiration from design communities, I was able to complete the portfolio and present my work effectively. This project was a significant step in my journey as a developer, highlighting my abilities and growth in front-end design.",
+    challenges: "",
+    link: "https://juspher-vergara-portfolio.netlify.app",
+    github: "https://github.com/Juzpher/juspher-portfolio.git",
+  },
   {
     id: "2024-03",
     type: "Cooking Book Website",
@@ -100,20 +100,6 @@ const projectsData = [
     github: "https://github.com/Juzpher/My-Todo-App.git",
   },
   {
-    id: "2024-06",
-    type: "Portfolio Website",
-    name: "Previous Portfolio",
-    role: "Front End",
-    img: portfolio,
-    tools: [react, tailwind],
-    toolsInText: ["React.js", "TailwindCSS"],
-    description:
-      "This is my first personal portfolio, designed to showcase my skills as a front-end developer. Built using React.js with Vite for fast development and TailwindCSS for modern styling, this project was initially challenging due to a lack of design ideas. However, after gathering inspiration from design communities, I was able to complete the portfolio and present my work effectively. This project was a significant step in my journey as a developer, highlighting my abilities and growth in front-end design.",
-    challenges: "",
-    link: "https://juspher-vergara-portfolio.netlify.app",
-    github: "https://github.com/Juzpher/juspher-portfolio.git",
-  },
-  {
     id: "2024-07",
     type: "Budget Tracker Website",
     name: "Finora",
@@ -130,7 +116,7 @@ const projectsData = [
     description:
       "This is a budget tracker website that allows users to track their income and expenses. It is built with Next.js, Shadcn UI, and Tanstack Query.",
     challenges: "",
-    link: "https://budget-tracker-54kh.onrender.com/",
+    link: "https://finora-budget-tracker.vercel.app/",
     github: "https://github.com/Juzpher/Budget-Tracker.git",
   },
 ];
